@@ -7,6 +7,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import TensorDataset, DataLoader
 
+torch.manual_seed(42) # fixed seed, so every run gives the same result
+
 # Alright, first we are settling the data for the fetch_calfornia_housing
 
 data=fetch_california_housing()
@@ -72,7 +74,7 @@ for epoch in range(1, epochs+1):
     predictor_model.train() # specific command to train under this time period
     running_loss=0.0
 
-    for batch_X, batch_Y in test_loader:
+    for batch_X, batch_Y in train_loader: # train only on the training set, the test set stays unseen
         optimizer.zero_grad() # reset old gradients
         output=predictor_model(batch_X) # forward pass the output shape
         loss=criterion(output, batch_Y) # calculating the loss
@@ -101,7 +103,7 @@ r2 = r2_score(all_targets, all_preds)
 
 print("\n" + "=" * 40)
 print(f"=== MEAN SQUARED ERROR (MSE): {mse:.4f} ===")
-print(f"=== R² SCORE:                 {r2 * 100:.2f}% ===")
+print(f"=== R² SCORE:                 {r2:.4f} ===")
 print("=" * 40)
            
 
