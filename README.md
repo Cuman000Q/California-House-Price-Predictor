@@ -53,8 +53,8 @@ The random seed is fixed, so you get the same result on every run.
 Requires Python 3.9+.
 
 ```bash
-git clone https://github.com/Cuman000Q/california-housing-price-predictor.git
-cd california-housing-price-predictor
+git clone https://github.com/Cuman000Q/California-House-Price-Predictor.git
+cd California-House-Price-Predictor
 pip install -r requirements.txt
 python housing_price_predictor.py
 ```
@@ -76,5 +76,5 @@ connection is needed once. Training takes under a minute on a normal CPU.
 ## Author
 
 Made by [Cuman000Q](https://github.com/Cuman000Q). See also the
-[Wine Origin Classifier](https://github.com/Cuman000Q/wine-origin-classifier),
+[Wine Origin Classifier](https://github.com/Cuman000Q/Wine-Origin-Classifier),
 the classification counterpart of this project.
